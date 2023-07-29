@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 
 const NavLink = ({ children, href, exact = false, activeClassName, ...props }) => {
    const path = usePathname();
-   console.log(path);
    const active = exact ? path === href : path.startsWith(href);
    const classes = classNames(props.className, active && activeClassName);
    if (classes) {
