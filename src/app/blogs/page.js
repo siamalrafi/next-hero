@@ -33,7 +33,7 @@ const blogs = [
 
 const BlogsPage = () => {
    // const router = useRouter();
-
+   // console.log(router);
    return (
       <div className="container mx-auto p-2">
          {blogs.map(({ id, year, title }) => (
