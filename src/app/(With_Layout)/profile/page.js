@@ -4,7 +4,12 @@ export const metadata = {
 };
 
 const ProfilePage = () => {
-   return <div>ProfilePage</div>;
+   return (
+      <div>
+         <h1>this is the page fo Profile Route.</h1>
+         <p>this is the main Profile page.</p>
+      </div>
+   );
 };
 
 export default ProfilePage;
