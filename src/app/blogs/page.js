@@ -44,6 +44,7 @@ const BlogsPage = () => {
                   },
                }}
                // onClick={() => router.push(`/blogs/${year}/${id}?title=${title}`)}
+
                key={id}
             >
                {title}
