@@ -1,6 +1,7 @@
 // "use client";
 
 import Link from "next/link";
+import LoadData from "../utils/LoadData";
 // import { useRouter } from "next/navigation";
 
 export const metadata = {
@@ -8,34 +9,13 @@ export const metadata = {
    description: "Next Hero",
 };
 
-const blogs = [
-   {
-      id: 1,
-      year: 2016,
-      title: "title 1",
-   },
-   {
-      id: 2,
-      year: 2016,
-      title: "title 2",
-   },
-   {
-      id: 3,
-      year: 2016,
-      title: "title 3",
-   },
-   {
-      id: 4,
-      year: 2016,
-      title: "title 4",
-   },
-];
+const blogs = await LoadData();
 
 const BlogsPage = () => {
    return (
       <div className="container mx-auto p-2">
          {blogs.map(({ id, year, title }) => (
-            <Link
+            <div
                className="block border border-blue-500 p-2 my-2"
                href={{
                   pathname: `/blogs/${year}/${id}`,
@@ -47,8 +27,10 @@ const BlogsPage = () => {
 
                key={id}
             >
-               {title}
-            </Link>
+               <p>{id}</p>
+               <h3>title</h3>
+               <Link href={`blogs/${id}`}>Details</Link>
+            </div>
          ))}
       </div>
    );
